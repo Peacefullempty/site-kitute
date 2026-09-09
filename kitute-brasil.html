@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitute Brasil — Mercado Brasileiro & Açougue Gourmet em Woonsocket, RI</title>
+<meta name="description" content="Kitute Brasil: mercado brasileiro e açougue gourmet em Woonsocket, RI. Carnes selecionadas, feijoada, pão francês fresco e produtos do Brasil. Nota 4.8 no Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal: #1B1917;
+    --charcoal-2: #242220;
+    --wood: #6B4A32;
+    --wood-dark: #4A3220;
+    --wood-light: #8B6242;
+    --cream: #F3EDE2;
+    --cream-2: #E9E0CF;
+    --green: #2E6B47;
+    --green-light: #4C8D65;
+    --gold: #C79A3D;
+    --gold-light: #DDB965;
+    --ink: #17140F;
+    --line: rgba(243,237,226,0.14);
+    --line-dark: rgba(23,20,15,0.12);
+    --radius-s: 4px;
+    --radius-m: 10px;
+    --shadow-card: 0 18px 40px -22px rgba(0,0,0,0.55);
+    font-size: 16px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: 'Manrope', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.12;
+    margin:0;
+    letter-spacing: -0.01em;
+  }
+
+  .container{
+    width:100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  :focus-visible{
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding: 15px 28px;
+    border-radius: var(--radius-s);
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1.5px solid transparent;
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    white-space: nowrap;
+  }
+  .btn:active{ transform: scale(0.98); }
+  .btn-gold{
+    background: var(--gold);
+    color: var(--ink);
+  }
+  .btn-gold:hover{ background: var(--gold-light); }
+  .btn-outline{
+    background: transparent;
+    border-color: rgba(243,237,226,0.5);
+    color: var(--cream);
+  }
+  .btn-outline:hover{ border-color: var(--cream); background: rgba(243,237,226,0.08); }
+  .btn-dark{
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .btn-dark:hover{ background: var(--ink); }
+  .btn-block{ width:100%; }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background: rgba(27,25,23,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 76px;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    color: var(--cream);
+  }
+  .brand-mark{
+    font-family:'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight:700;
+    letter-spacing: -0.01em;
+  }
+  .brand-mark span{ color: var(--gold-light); }
+  .brand-tag{
+    font-size: 0.72rem;
+    color: rgba(243,237,226,0.55);
+    display:none;
+  }
+  @media(min-width:640px){ .brand-tag{ display:inline; } }
+
+  nav.primary-nav{ display:none; }
+  @media(min-width: 900px){
+    nav.primary-nav{
+      display:flex;
+      gap: 34px;
+      align-items:center;
+    }
+    nav.primary-nav a{
+      color: rgba(243,237,226,0.82);
+      font-size: 0.95rem;
+      font-weight:600;
+      position:relative;
+      padding: 6px 0;
+    }
+    nav.primary-nav a::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-2px;
+      height:2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+    nav.primary-nav a:hover::after{ transform: scaleX(1); }
+  }
+
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-actions .btn{ padding: 11px 20px; font-size: 0.9rem; }
+  .nav-actions .btn-outline{ display:none; }
+  @media(min-width:900px){ .nav-actions .btn-outline{ display:inline-flex; } }
+
+  .hamburger{
+    display:flex;
+    background:none; border:none;
+    width: 42px; height:42px;
+    align-items:center; justify-content:center;
+    color: var(--cream);
+  }
+  @media(min-width:900px){ .hamburger{ display:none; } }
+  .hamburger svg{ width:24px; height:24px; }
+
+  #mobile-menu{
+    display:none;
+    background: var(--charcoal);
+    border-top: 1px solid var(--line);
+  }
+  #mobile-menu.open{ display:block; }
+  #mobile-menu ul{ padding: 10px 24px 22px; display:flex; flex-direction:column; }
+  #mobile-menu a{
+    color: var(--cream);
+    padding: 13px 0;
+    font-weight:600;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--line);
+  }
+  #mobile-menu .mobile-cta{ margin-top: 16px; }
+  @media(min-width:900px){ #mobile-menu{ display:none !important; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(199,154,61,0.16), transparent 60%),
+      linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+    color: var(--cream);
+    overflow:hidden;
+    padding: 56px 0 64px;
+  }
+  .hero::before{
+    /* subtle butcher-paper / wood-grain texture using repeating lines */
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 7px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    gap: 44px;
+    align-items:center;
+  }
+  @media(min-width: 960px){
+    .hero-grid{ grid-template-columns: 1.15fr 0.85fr; gap: 60px; }
+  }
+
+  .hero-eyebrow-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 22px;
+  }
+  .stars-mini{ color: var(--gold-light); font-size: 0.95rem; letter-spacing: 2px; }
+  .hero-eyebrow-row .sep{ color: rgba(243,237,226,0.35); }
+  .hero-eyebrow-row span.rating-text{
+    font-size: 0.92rem;
+    color: rgba(243,237,226,0.75);
+    font-weight:600;
+  }
+
+  .hero h1{
+    font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+    color: var(--cream);
+    max-width: 15ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color: var(--gold-light);
+  }
+  .hero-sub{
+    margin-top: 20px;
+    font-size: 1.15rem;
+    color: rgba(243,237,226,0.8);
+    max-width: 46ch;
+    font-weight:500;
+  }
+  .hero-sub strong{ color: var(--cream); }
+
+  .hero-address{
+    margin-top: 22px;
+    display:flex;
+    align-items:flex-start;
+    gap: 10px;
+    color: rgba(243,237,226,0.72);
+    font-size: 0.98rem;
+    max-width: 40ch;
+  }
+  .hero-address svg{ flex-shrink:0; margin-top:3px; width:18px; height:18px; color: var(--green-light); }
+
+  .hero-cta-row{
+    margin-top: 34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 14px;
+  }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-m);
+    background:
+      linear-gradient(160deg, var(--wood-light) 0%, var(--wood) 46%, var(--wood-dark) 100%);
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    display:flex;
+    align-items:flex-end;
+    padding: 0;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(4deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 2px, transparent 2px, transparent 14px);
+  }
+  .hero-visual .badge{
+    position:relative;
+    margin: 22px;
+    background: rgba(27,25,23,0.82);
+    border: 1px solid rgba(243,237,226,0.25);
+    border-radius: var(--radius-s);
+    padding: 20px 22px;
+    color: var(--cream);
+    width: calc(100% - 44px);
+  }
+  .hero-visual .badge .big-num{
+    font-family:'Fraunces', serif;
+    font-size: 2.6rem;
+    font-weight:700;
+    color: var(--gold-light);
+    line-height:1;
+  }
+  .hero-visual .badge .big-num small{
+    font-family:'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight:600;
+    color: rgba(243,237,226,0.65);
+    margin-left: 6px;
+  }
+  .hero-visual .badge .cut-label{
+    margin-top:6px;
+    font-size: 0.85rem;
+    color: rgba(243,237,226,0.65);
+  }
+  .hero-visual .ribbon{
+    position:absolute;
+    top: 18px; right: 18px;
+    background: var(--green);
+    color: var(--cream);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 100px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .hero-visual .ribbon::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background: var(--gold-light);
+  }
+
+  /* ---------- PHOTO FRAME (placeholder para fotos reais) ---------- */
+  .photo-frame{
+    position:relative;
+    border-radius: var(--radius-m);
+    overflow:hidden;
+    background: linear-gradient(160deg, #EFE7D6 0%, #E3D8C0 100%);
+    border: 1px solid var(--line-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .photo-frame img{
+    width:100%; height:100%;
+    object-fit: cover;
+    position:absolute; inset:0;
+  }
+  .photo-frame .frame-hint{
+    position:relative;
+    text-align:center;
+    padding: 18px;
+    color: #8A7E68;
+  }
+  .photo-frame .frame-hint svg{ width:30px; height:30px; margin: 0 auto 10px; display:block; }
+  .photo-frame .frame-hint span{
+    display:block;
+    font-size: 0.82rem;
+    font-weight:700;
+  }
+  .photo-frame.dark{
+    background: linear-gradient(160deg, var(--charcoal-2) 0%, var(--charcoal) 100%);
+  }
+  .photo-frame.dark .frame-hint{ color: rgba(243,237,226,0.4); }
+
+  /* ---------- SOBRE ---------- */
+  .about{
+    padding: 90px 0;
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+  .about-grid{
+    display:grid;
+    gap: 44px;
+    align-items:center;
+  }
+  @media(min-width: 960px){
+    .about-grid{ grid-template-columns: 0.95fr 1.05fr; gap: 64px; }
+  }
+  .about-photo{ aspect-ratio: 5/4; }
+  .about-copy .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    color: var(--green-light); font-weight:700; font-size: 0.92rem; margin-bottom:14px;
+  }
+  .about-copy .kicker::before{ content:""; width:22px; height:2px; background: var(--gold-light); }
+  .about-copy h2{
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    color: var(--cream);
+    max-width: 18ch;
+  }
+  .about-copy p{
+    margin-top: 18px;
+    color: rgba(243,237,226,0.72);
+    font-size: 1.04rem;
+    max-width: 52ch;
+  }
+  .about-stats{
+    margin-top: 32px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 460px;
+  }
+  .about-stats .stat b{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size: 1.7rem;
+    color: var(--gold-light);
+  }
+  .about-stats .stat span{
+    font-size: 0.82rem;
+    color: rgba(243,237,226,0.6);
+  }
+
+  /* ---------- SPECIALTIES ---------- */
+  .specialties{
+    padding: 84px 0 90px;
+    background: var(--cream);
+  }
+  .section-head{
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+  .section-head h2{
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    color: var(--ink);
+  }
+  .section-head p{
+    margin-top: 14px;
+    font-size: 1.05rem;
+    color: #4B453C;
+    max-width: 52ch;
+  }
+  .section-head .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color: var(--green);
+    font-weight:700;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+  .section-head .kicker::before{
+    content:"";
+    width: 22px; height: 2px;
+    background: var(--gold);
+  }
+
+  .card-grid{
+    display:grid;
+    gap: 22px;
+    grid-template-columns: 1fr;
+  }
+  @media(min-width: 640px){
+    .card-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media(min-width: 1024px){
+    .card-grid{ grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .spec-card{
+    background: var(--charcoal);
+    color: var(--cream);
+    border-radius: var(--radius-m);
+    padding: 30px 26px 28px;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .spec-card.featured{
+    background: linear-gradient(155deg, var(--wood) 0%, var(--wood-dark) 100%);
+  }
+  .spec-icon{
+    width: 46px; height:46px;
+    border-radius: 50%;
+    background: rgba(243,237,226,0.08);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--gold-light);
+  }
+  .spec-icon svg{ width:22px; height:22px; }
+  .spec-card h3{
+    font-size: 1.28rem;
+    color: var(--cream);
+  }
+  .spec-card p{
+    color: rgba(243,237,226,0.68);
+    font-size: 0.96rem;
+    flex-grow:1;
+  }
+  .spec-tag{
+    font-size: 0.78rem;
+    font-weight:700;
+    color: var(--gold-light);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  /* ---------- SOCIAL PROOF ---------- */
+  .proof{
+    background: var(--cream-2);
+    padding: 88px 0 96px;
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .proof-top{
+    display:grid;
+    gap: 40px;
+    margin-bottom: 54px;
+    align-items:center;
+  }
+  @media(min-width: 860px){
+    .proof-top{ grid-template-columns: 0.9fr 1.1fr; }
+  }
+  .rating-block{
+    display:flex;
+    align-items:center;
+    gap: 26px;
+  }
+  .rating-num{
+    font-family:'Fraunces', serif;
+    font-size: 4.4rem;
+    font-weight:700;
+    color: var(--ink);
+    line-height:1;
+  }
+  .rating-meta .stars{
+    color: var(--gold);
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+  }
+  .rating-meta p{
+    margin: 6px 0 0;
+    color: #4B453C;
+    font-weight:600;
+    font-size: 0.98rem;
+  }
+  .proof-copy h2{
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    color: var(--ink);
+    max-width: 20ch;
+  }
+  .proof-copy p{
+    margin-top: 12px;
+    color: #4B453C;
+    font-size: 1.02rem;
+    max-width: 48ch;
+  }
+
+  .testimonials{
+    display:grid;
+    gap: 22px;
+    grid-template-columns: 1fr;
+  }
+  @media(min-width: 720px){
+    .testimonials{ grid-template-columns: repeat(2, 1fr); }
+  }
+  .testimonial{
+    background: var(--cream);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-m);
+    padding: 28px 26px;
+  }
+  .testimonial .stars{
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  .testimonial blockquote{
+    margin: 14px 0 0;
+    font-size: 1.08rem;
+    color: var(--ink);
+    font-weight: 500;
+    line-height:1.5;
+  }
+  .testimonial cite{
+    display:block;
+    margin-top: 16px;
+    font-style:normal;
+    font-weight:700;
+    color: var(--wood-dark);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 84px 0 0;
+  }
+  .contact-grid{
+    display:grid;
+    gap: 46px;
+  }
+  @media(min-width: 900px){
+    .contact-grid{ grid-template-columns: 1fr 1fr; gap: 60px; }
+  }
+  .contact-info .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color: var(--gold-light);
+    font-weight:700;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+  .contact-info .kicker::before{ content:""; width:22px; height:2px; background: var(--green-light); }
+  .contact-info h2{
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    color: var(--cream);
+    max-width: 16ch;
+  }
+  .contact-list{
+    margin-top: 30px;
+    display:flex;
+    flex-direction:column;
+    gap: 22px;
+  }
+  .contact-item{
+    display:flex;
+    gap: 16px;
+    align-items:flex-start;
+  }
+  .contact-item .ic{
+    width: 42px; height:42px;
+    border-radius: 50%;
+    background: rgba(243,237,226,0.08);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    color: var(--gold-light);
+  }
+  .contact-item .ic svg{ width:20px; height:20px; }
+  .contact-item h4{
+    font-family:'Manrope', sans-serif;
+    font-size: 0.98rem;
+    font-weight:700;
+    margin: 0 0 4px;
+    color: var(--cream);
+  }
+  .contact-item p, .contact-item a{
+    color: rgba(243,237,226,0.72);
+    font-size: 0.98rem;
+  }
+  .contact-item a:hover{ color: var(--gold-light); }
+
+  .contact-cta-row{
+    margin-top: 34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 14px;
+  }
+
+  .map-wrap{
+    border-radius: var(--radius-m);
+    overflow:hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-height: 320px;
+    background: var(--charcoal-2);
+  }
+  .map-wrap iframe{ width:100%; height:100%; min-height:320px; border:0; display:block; filter: grayscale(0.15) contrast(1.05); }
+
+  .footer-bottom{
+    margin-top: 70px;
+    border-top: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .footer-bottom-row{
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(243,237,226,0.5);
+  }
+  @media(min-width:640px){
+    .footer-bottom-row{ flex-direction:row; justify-content:space-between; align-items:center; }
+  }
+  .footer-bottom-row .brand-mark{ font-size: 1.1rem; }
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    z-index: 200;
+    display:flex;
+    gap: 10px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(27,25,23,0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+  }
+  @media(min-width: 900px){ .sticky-cta{ display:none; } }
+  .sticky-cta .btn{ flex:1; padding: 14px 10px; font-size: 0.92rem; }
+
+  body{ padding-bottom: 78px; }
+  @media(min-width: 900px){ body{ padding-bottom: 0; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-row">
+    <a href="#topo" class="brand">
+      <span class="brand-mark">Kitute <span>Brasil</span></span>
+      <span class="brand-tag">Mercado & Açougue Gourmet</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Localização</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contato" class="btn btn-outline">Como Chegar</a>
+      <a href="tel:+14015437854" class="btn btn-gold">Ligar Agora</a>
+      <button class="hamburger" id="menuBtn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <svg id="iconOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        <svg id="iconClose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#contato">Localização</a></li>
+    </ul>
+    <div class="container">
+      <a href="tel:+14015437854" class="btn btn-gold btn-block mobile-cta">📞 Ligar: (401) 543-7854</a>
+    </div>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow-row">
+          <span class="stars-mini">★★★★★</span>
+          <span class="rating-text">4.8 no Google</span>
+          <span class="sep">•</span>
+          <span class="rating-text">+50 avaliações</span>
+        </div>
+
+        <h1>O sabor do Brasil encontra o corte perfeito, em <em>Woonsocket</em></h1>
+
+        <p class="hero-sub">Açougue gourmet e mercado brasileiro completo: carnes selecionadas cortadas na hora, feijoada de dar água na boca e pão francês fresquinho todos os dias. <strong>Abrimos às 05:30h</strong> para você começar bem o dia.</p>
+
+        <div class="hero-address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span>400 Clinton St, Woonsocket, RI 02895 — Estados Unidos</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <a href="https://wa.me/14015437854" target="_blank" rel="noopener" class="btn btn-gold">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C11.6 9 11 7.6 10.8 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s1 2.5 1.1 2.6c.1.2 1.9 3 4.7 4.1.7.3 1.2.4 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.1 8.1 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+14015437854" class="btn btn-outline">📞 (401) 543-7854</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" role="img" aria-label="Vitrine de carnes selecionadas do açougue gourmet Kitute Brasil">
+        <span class="ribbon">Aberto agora</span>
+        <div class="badge">
+          <div class="big-num">4.8<small>/5 no Google</small></div>
+          <div class="cut-label">Açougue gourmet • Mercado brasileiro completo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="photo-frame about-photo dark">
+        <img src="images/fachada-kitute-brasil.jpg" alt="Fachada da loja Kitute Brasil, mercado brasileiro e açougue em Woonsocket, RI" loading="lazy">
+      </div>
+
+      <div class="about-copy">
+        <span class="kicker">Quem somos</span>
+        <h2>Um pedaço do Brasil dentro de Rhode Island</h2>
+        <p>O Kitute Brasil nasceu para matar a saudade de quem é do Brasil e para apresentar a qualidade da nossa culinária a quem nunca provou. Somos mercado e açougue gourmet ao mesmo tempo: escolhemos cada corte com cuidado de especialista e enchemos as prateleiras com os produtos que fazem a casa do brasileiro na América ficar mais completa.</p>
+        <p>Da carne no ponto certo ao pão francês fresquinho, tratamos cada cliente como se estivesse comprando no mercado do seu bairro — só que aqui, a 05:30 da manhã, com atendimento nota 4.8.</p>
+
+        <div class="about-stats">
+          <div class="stat"><b>4.8★</b><span>Nota no Google</span></div>
+          <div class="stat"><b>05:30h</b><span>Abertura diária</span></div>
+          <div class="stat"><b>50+</b><span>Avaliações</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="specialties" id="produtos">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Nossos produtos</span>
+        <h2>Tudo que você sente falta do Brasil, num só lugar</h2>
+        <p>Selecionamos cada corte e cada produto com o mesmo cuidado de um açougue gourmet — com o sabor de casa.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="spec-card featured">
+          <div class="photo-frame" style="aspect-ratio:4/3; margin-bottom:4px;">
+            <img src="images/acougue-gourmet.jpg" alt="Cortes de carne grelhados no ponto, especialidade do açougue gourmet Kitute Brasil" loading="lazy">
+          </div>
+          <h3>Açougue Gourmet</h3>
+          <p>Cortes nobres selecionados diariamente, no ponto certo para churrasco, picanha e pratos especiais.</p>
+          <span class="spec-tag">Cortes frescos todos os dias</span>
+        </article>
+
+        <article class="spec-card">
+          <div class="photo-frame" style="aspect-ratio:4/3; margin-bottom:4px;">
+            <img src="images/feijoada.jpg" alt="Feijoada brasileira tradicional feita no Kitute Brasil, com carnes, linguiça e acompanhamentos" loading="lazy">
+          </div>
+          <h3>Feijoada</h3>
+          <p>A verdadeira feijoada brasileira, temperada com capricho — o prato que traz o Brasil pra sua mesa.</p>
+          <span class="spec-tag">Prato mais pedido</span>
+        </article>
+
+        <article class="spec-card">
+          <div class="photo-frame" style="aspect-ratio:4/3; margin-bottom:4px;">
+            <img src="images/pao-frances.jpg" alt="Cesta de pão francês fresquinho do Kitute Brasil" loading="lazy">
+          </div>
+          <h3>Pão Francês</h3>
+          <p>Assado fresco ao longo do dia, crocante por fora e macio por dentro — igualzinho ao da padaria da esquina.</p>
+          <span class="spec-tag">Assado diariamente</span>
+        </article>
+
+        <article class="spec-card">
+          <div class="photo-frame" style="aspect-ratio:4/3; margin-bottom:4px;">
+            <img src="images/produtos-brasileiros.jpg" alt="Produtos brasileiros à venda no Kitute Brasil: arroz, feijão, guaraná, café e coxinhas" loading="lazy">
+          </div>
+          <h3>Produtos Brasileiros</h3>
+          <p>Guaraná, café, doces, temperos e mantimentos direto do Brasil — a mercearia completa da comunidade.</p>
+          <span class="spec-tag">Grande variedade</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="proof" id="avaliacoes">
+    <div class="container">
+      <div class="proof-top">
+        <div class="rating-block">
+          <div class="rating-num">4.8</div>
+          <div class="rating-meta">
+            <div class="stars">★★★★★</div>
+            <p>Mais de 50 avaliações no Google</p>
+          </div>
+        </div>
+        <div class="proof-copy">
+          <h2>Quem experimenta, vira cliente</h2>
+          <p>Atendimento de bairro com padrão de açougue gourmet — é isso que nossos clientes contam todos os dias.</p>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Atendimento muito bom e produtos de primeira."</blockquote>
+          <cite>Poliane Medeiros</cite>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Super indico, atendimento super bom e tem muitas variedades."</blockquote>
+          <cite>Robert Rodrigues</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / LOCALIZAÇÃO -->
+  <footer id="contato">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="kicker">Visite a loja</span>
+          <h2>Fácil de chegar, difícil de esquecer o sabor</h2>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <div>
+                <h4>Endereço</h4>
+                <a href="https://www.google.com/maps/place/Mercado+brasileiro+bucher+KITUTE+BRASIL" target="_blank" rel="noopener">400 Clinton St, Woonsocket, RI 02895, EUA</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></span>
+              <div>
+                <h4>Telefone</h4>
+                <a href="tel:+14015437854">+1 (401) 543-7854</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <div>
+                <h4>Horário</h4>
+                <p>Abrimos todos os dias às 05:30h</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta-row">
+            <a href="https://wa.me/14015437854" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp</a>
+            <a href="https://www.google.com/maps/place/Mercado+brasileiro+bucher+KITUTE+BRASIL" target="_blank" rel="noopener" class="btn btn-outline">Ver no Mapa</a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=Kitute+Brasil,400+Clinton+St,Woonsocket,RI+02895&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de localização do Kitute Brasil">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-row" style="padding:0;">
+          <span class="brand-mark">Kitute <span style="color:var(--gold-light)">Brasil</span></span>
+          <span>© <span id="year"></span> Kitute Brasil — 400 Clinton St, Woonsocket, RI 02895 · +1 401-543-7854</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CTA FIXA MOBILE -->
+<div class="sticky-cta">
+  <a href="https://wa.me/14015437854" target="_blank" rel="noopener" class="btn btn-gold">WhatsApp</a>
+  <a href="tel:+14015437854" class="btn btn-dark">📞 Ligar</a>
+</div>
+
+<script>
+  (function(){
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var iconOpen = document.getElementById('iconOpen');
+    var iconClose = document.getElementById('iconClose');
+
+    function closeMenu(){
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      iconOpen.style.display = 'block';
+      iconClose.style.display = 'none';
+    }
+
+    menuBtn.addEventListener('click', function(){
+      var isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      iconOpen.style.display = isOpen ? 'none' : 'block';
+      iconClose.style.display = isOpen ? 'block' : 'none';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', function(){
+      if (window.innerWidth >= 900) closeMenu();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>
